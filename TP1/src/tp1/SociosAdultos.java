@@ -9,13 +9,6 @@ package tp1;
  *
  * @author Marco
  */
-public class Main {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        //O joão é um tótó
-    }
-    
+public class SociosAdultos {
+    //Aqui o joão tb é um tótó
 }
