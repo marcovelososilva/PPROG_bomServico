@@ -9,19 +9,21 @@ public class SocioAdulto extends SocioJovem {
     private boolean dirigente;
     
     private final String tagAdulto = "SAdulto-";
-    private static int SAContador = 0;
+    private static int SAContador = 1;
     private static final boolean DIRIGENTE_POR_DEFEITO = false;
 
     public SocioAdulto() {
         super();
         this.dirigente = DIRIGENTE_POR_DEFEITO;
-        this.IDAdulto = tagAdulto + ++SAContador;
+        this.IDAdulto = tagAdulto + SAContador;
+        SAContador ++;
     }
 
     public SocioAdulto(String nome, int nContribuinte, int anoNascimento, int numAulasSemanais, boolean dirigente) {
         super(numAulasSemanais, nome, nContribuinte, anoNascimento);
         this.dirigente = dirigente;
-        this.IDAdulto = tagAdulto + ++SAContador;
+        this.IDAdulto = tagAdulto + SAContador;
+        SAContador++;
     }
   
     

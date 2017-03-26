@@ -31,7 +31,7 @@ public class Main {
         System.out.println(SS2.getAnoNascimento());
         System.out.println(SS2.calcularDesconto());
         System.out.print("ola %.d2"+SS2.calcularMensalidade());
-        
+        //fim apagar
             
         Associados[] listaSocios = new Associados[12];
         listaSocios[0]=SA1;
@@ -73,4 +73,19 @@ public class Main {
                       + ".\nO peso da mensalidade dos socios Jovens foi " + (float) ( (mensalidadeTotalJovens) / (mensalidadeTotalJovens+mensalidadeTotalSeniores) * 100) + "%."
                       + ".\nO peso da mensalidade dos socios Seniores foi " + (float) ( (mensalidadeTotalSeniores) / (mensalidadeTotalJovens+mensalidadeTotalSeniores) * 100) + "%." );        
     }
-}
+    
+    public static void listaEncEducacao (Associados[] listaSocios){
+        System.out.println("==LISTA ENCARREGADOS DE EDUCAÇÃO E Nº DE EDUCANDOS==");
+        String[][] listaEncarregados = new String [listaSocios.length][2];
+        int contEncarregados = 0;
+        for (Associados e : listaSocios) {
+            if (e !=null && e instanceof SocioMenor){
+                //if (listaSocios.encarregadoEducacao){
+                    
+                }
+            //} else {
+            
+            }
+        }
+
+    }

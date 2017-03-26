@@ -10,20 +10,22 @@ public class SocioMenor extends SocioJovem {
     
     private final String tagMenor = "SMenor-";
     private static double desconto = 0.20;
-    private static int SMContador = 0;
+    private static int SMContador = 1;
     
     private final String ENCARREGADOSEDUCACAO_POR_DEFEITO = "default Encarregados Educação";
 
     public SocioMenor() {
         super();
         this.encarregadoEducacao = ENCARREGADOSEDUCACAO_POR_DEFEITO;
-        this.IDMenor = tagMenor + ++SMContador;
+        this.IDMenor = tagMenor + SMContador;
+        SMContador++;
     }
 
     public SocioMenor(String nome, int nContribuinte, int anoNascimento, String encarregadoEducacao, int numAulasSemanais) {
         super(numAulasSemanais, nome, nContribuinte, anoNascimento);
         this.encarregadoEducacao = encarregadoEducacao;
-        this.IDMenor = tagMenor + SMContador++;
+        this.IDMenor = tagMenor + SMContador;
+        SMContador++;
     }
     
     

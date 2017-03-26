@@ -39,7 +39,7 @@ public class TESTE_nautico {
         boolean validarSA4 = SA4.calcularMensalidade() == 0.0;
         System.out.println("    SociosAdulto4: " + validarSA4 + ".\ndados:" + SA4.toString());
         boolean validarSA5 = SA5.calcularMensalidade() == 0.0;
-        System.out.println("    SociosAdulto4: " + validarSA5 + ".\ndados:" + SA4.toString());
+        System.out.println("    SociosAdulto5: " + validarSA5 + ".\ndados:" + SA5.toString());
  
         
     }
