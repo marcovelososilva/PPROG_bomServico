@@ -5,7 +5,7 @@ package AssociadosClubeNautico;
  * SUPER CLASSE ABSTRATA OBJECTOS ASSOCIADOS.
  * <P>Associdos - aqui está guardado o nome, numero contribuinte e ano nasciemnto.
  *  
- * @author Marco
+ * @author Marco-115883 | Joao-1161313 (1NB)
  * @version 1.0
  */
 public abstract class Associados {
