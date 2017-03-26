@@ -26,7 +26,7 @@ public class Main {
         SocioAdulto SA4 =new SocioAdulto("Gabriel Castanheira", 151616184, 1990, 5, true);
         SocioMenor SM4 =new SocioMenor("Mauro Dias", 121216145, 2000, "Miguel Dias", 50);
         SocioSenior SS4 =new SocioSenior("Bruna Salvada",189223009,1900,false);
-        SocioMenor SM5 =new SocioMenor("André Almeidaaaaa", 154545789, 2016, "José Semedo", 10);
+        SocioMenor SM5 =new SocioMenor("André Almeida", 154545789, 2016, "José Semedo", 10);
         
         
         Associados[] listaSocios = new Associados[13];
@@ -45,9 +45,17 @@ public class Main {
         listaSocios[12]=SM5;
         
         calcularMensalidadeTotal(listaSocios);
+        
         listaEncEducacao(listaSocios);
     }
     
+    /**
+    * Metodo que calcula e apresenta as mensalidades dos sócios.
+    * Apresenta a percentagem e totais no final.
+    * 
+    * @param listaSocios [Associados] Lista de socios. 
+    * 
+    */
     public static void calcularMensalidadeTotal(Associados[] listaSocios){
         System.out.println("==CALCULO DAS MENSALIDADES==");
         double mensalidadeTotalJovens = 0;
@@ -66,12 +74,20 @@ public class Main {
         }
         double mtj = (mensalidadeTotalJovens)/(mensalidadeTotalJovens+mensalidadeTotalSeniores) * 100;
         double mts = (mensalidadeTotalSeniores) / (mensalidadeTotalJovens+mensalidadeTotalSeniores) * 100;        
+        System.out.println("\n=TOTAIS=");
         System.out.printf("O total da mensalidade paga pelos Socios Jovens foi de: %2.2f €", mensalidadeTotalJovens);
-        System.out.printf(".\nO total da mensalidade paga pelos Socios Séniores foi de: %2.2f €",mensalidadeTotalSeniores);
-        System.out.printf(".\nO peso da mensalidade dos socios Jovens foi %2.2f  porcento",mtj);
-        System.out.printf(".\nO peso da mensalidade dos socios Seniores foi %2.2f  porcento",mts);
+        System.out.printf("\nO total da mensalidade paga pelos Socios Séniores foi de: %2.2f €",mensalidadeTotalSeniores);
+        System.out.printf("\nO peso da mensalidade dos socios Jovens foi %2.2f  porcento",mtj);
+        System.out.printf("\nO peso da mensalidade dos socios Seniores foi %2.2f  porcento",mts);
     }
     
+    /**
+    * Metodo que verifica e apresenta os Encarregados de Educação dos Sócios menores,
+    * Mosta o nome e quantos educando tem um encarregado de educação.
+    * 
+    * @param listaEncEducacao [Associados] Lista de socios. 
+    * 
+    */
     public static void listaEncEducacao(Associados[] listaSocios) {
         System.out.println("\n\n==LISTA ENCARREGADOS DE EDUCAÇÃO E Nº DE EDUCANDOS==");
         String[] listaEncarregados = new String[listaSocios.length];

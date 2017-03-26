@@ -12,13 +12,26 @@ public class SocioAdulto extends SocioJovem {
     private static int SAContador = 1;
     private static final boolean DIRIGENTE_POR_DEFEITO = false;
 
+    /**
+    * Construtor - Socio Adulto sem Parametros
+    * 
+    */
     public SocioAdulto() {
         super();
         this.dirigente = DIRIGENTE_POR_DEFEITO;
         this.IDAdulto = tagAdulto + SAContador;
         SAContador ++;
     }
-
+    
+    /**
+    * Construtor - Socio Adulto com Parametros
+    *
+    * @param numAulasSemanais  int numAulasSemanais
+    * @param nome  int nome
+    * @param nContribuinte  int Contribuinte
+    * @param anoNascimento  int anoNascimento 
+    *  * @param dirigente  int dirigente
+    */
     public SocioAdulto(String nome, int nContribuinte, int anoNascimento, int numAulasSemanais, boolean dirigente) {
         super(numAulasSemanais, nome, nContribuinte, anoNascimento);
         this.dirigente = dirigente;

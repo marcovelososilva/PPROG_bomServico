@@ -3,7 +3,7 @@ package AssociadosClubeNautico;
 /**
  *
  * SUPER CLASSE ABSTRATA OBJECTOS ASSOCIADOS.
- * <P>Associdos - aqui está guardado o nome, numero contribuinte e ano nasciemnto.
+ * <P>Associdos - aqui está guardado o nome, numero contribuinte e ano nascimento.
  *  
  * @author Marco-115883 | Joao-1161313 (1NB)
  * @version 1.0

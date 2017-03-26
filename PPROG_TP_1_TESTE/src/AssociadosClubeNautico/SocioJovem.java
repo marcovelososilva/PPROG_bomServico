@@ -11,11 +11,23 @@ public abstract class SocioJovem extends Associados{
     private static double valorPorAula = 25.0;
     private static double mensalidadeMaxima = 100.0;
 
+    /**
+    * Construtor - Socio Jovem sem Parametros
+    * 
+    */
     public SocioJovem() {
         super();
         this.numAulasSemanais = NUM_AULAS_SEMANAIS_POR_DEFEITO;
     }
 
+    /**
+    * Construtor - Socio Jovem com Parametros
+    * 
+    * @param numAulasSemanais  int numAulasSemanais
+    * @param nome  int nome
+    * @param nContribuinte  int Contribuinte
+    * @param anoNascimento  int anoNascimento
+    */
     public SocioJovem(int numAulasSemanais, String nome, int nContribuinte, int anoNascimento) {
         super(nome, nContribuinte, anoNascimento);
         this.numAulasSemanais = numAulasSemanais;

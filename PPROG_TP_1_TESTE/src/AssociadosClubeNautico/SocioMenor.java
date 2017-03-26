@@ -13,7 +13,11 @@ public class SocioMenor extends SocioJovem {
     private static int SMContador = 1;
     
     private final String ENCARREGADOSEDUCACAO_POR_DEFEITO = "default Encarregados Educação";
-
+    
+    /**
+    * Construtor - Socio Menor sem Parametros
+    * 
+    */
     public SocioMenor() {
         super();
         this.encarregadoEducacao = ENCARREGADOSEDUCACAO_POR_DEFEITO;
@@ -21,6 +25,15 @@ public class SocioMenor extends SocioJovem {
         SMContador++;
     }
 
+    /**
+    * Construtor - Socio Menor com Parametros
+    * @param numAulasSemanais  int numAulasSemanais
+    * @param nome  int nome
+    * @param nContribuinte  int Contribuinte
+    * @param anoNascimento  int anoNascimento
+    * @param encEducacao  String encEducacao
+    *  
+    */
     public SocioMenor(String nome, int nContribuinte, int anoNascimento, String encarregadoEducacao, int numAulasSemanais) {
         super(numAulasSemanais, nome, nContribuinte, anoNascimento);
         this.encarregadoEducacao = encarregadoEducacao;
