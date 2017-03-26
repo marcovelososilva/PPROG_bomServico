@@ -107,10 +107,17 @@ public abstract class Associados {
     public String toString() {
         return "Associados{" + "nome=" + nome + ", nContribuinte=" + nContribuinte + ", anoNascimento=" + anoNascimento + '}';
     }
+     
+    public double calcularMensalidade(){
+        double CVI = this.calcularValorIntegral();
+        double CD = this.calcularDesconto();
+        double mensalidade =  ( CVI * ( 1 - CD ) );
+        return mensalidade;
+    }
     
+    abstract double calcularValorIntegral();
     
-    
-    abstract String calcularMensalidade();
+    abstract double calcularDesconto();
 
     
 }

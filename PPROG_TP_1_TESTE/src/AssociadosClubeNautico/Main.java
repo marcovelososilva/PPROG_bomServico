@@ -15,17 +15,17 @@ public class Main {
      */
     public static void main(String[] args) {
         //METER DADOS
-        SocioAdulto SA1 =new SocioAdulto();
-        SocioMenor SM1 =new SocioMenor();
+        SocioAdulto SA1 =new SocioAdulto("Marco Silva", 236354490, 1986, 5, false);
+        SocioMenor SM1 =new SocioMenor("Micaela Dias", 311346797, 1999, "Miguel Dias", 2);
         SocioSenior SS1 =new SocioSenior();
-        SocioAdulto SA2 =new SocioAdulto();
-        SocioMenor SM2 =new SocioMenor();
+        SocioAdulto SA2 =new SocioAdulto("Luís Ferreira", 112211512, 1970, 25, false);
+        SocioMenor SM2 =new SocioMenor("André Almeida", 154545789, 2016, "Conceição Alemida", 10);
         SocioSenior SS2 =new SocioSenior();
-        SocioAdulto SA3 =new SocioAdulto();
-        SocioMenor SM3 =new SocioMenor();
+        SocioAdulto SA3 =new SocioAdulto("Francisco Moreira", 121518194, 1965, 50, true);
+        SocioMenor SM3 =new SocioMenor("Nelson Semedo", 154546458, 2005, "José Semedo", 1);
         SocioSenior SS3 =new SocioSenior();
-        SocioAdulto SA4 =new SocioAdulto();
-        SocioMenor SM4 =new SocioMenor();
+        SocioAdulto SA4 =new SocioAdulto("Gabriel Castanheira", 151616184, 1990, 5, true);
+        SocioMenor SM4 =new SocioMenor("Mauro Dias", 121216145, 2000, "Miguel Dias", 50);
         SocioSenior SS4 =new SocioSenior();
         
         Associados[] listaSocios = new Associados[12];
@@ -42,9 +42,30 @@ public class Main {
         listaSocios[10]=SM4;
         listaSocios[11]=SS4;
         
-        
+        calcularMensalidade(listaSocios);
         //LISTA ENCARREGADOS EDUCAÇÃO
-        //CALCULAR MENSALIDADE
     }
     
+    public static void calcularMensalidade(Associados[] listaSocios){
+        System.out.println("==CALCULO DAS MENSALIDADES==");
+        double mensalidadeTotalJovens = 0;
+        double mensalidadeTotalSeniores = 0;
+        for (Associados e : listaSocios) {
+            if (e !=null){
+            double mensalidade = e.calcularMensalidade();
+            System.out.println("A mensalidade do sócio " +  e.getNome() + " é de : " + mensalidade + "€");
+            if (e instanceof SocioSenior) {
+                mensalidadeTotalSeniores =+ mensalidade;
+            } 
+            else{
+                mensalidadeTotalJovens =+ mensalidade;
+            }
+            }
+        }
+        
+        System.out.printf("\nO total da mensalidade paga pelos Socios Jovens foi de: " + mensalidadeTotalJovens
+                      + ".\nO total da mensalidade paga pelos Socios Séniores foi de: " +  mensalidadeTotalSeniores
+                      + ".\nO peso da mensalidade dos socios Jovens foi %.f2" + (float) ( (mensalidadeTotalJovens) / (mensalidadeTotalJovens+mensalidadeTotalSeniores) * 100)
+                      + ".\nO peso da mensalidade dos socios Seniores foi %.f2" + (float) ( (mensalidadeTotalSeniores) / (mensalidadeTotalJovens+mensalidadeTotalSeniores) * 100) );        
+    }
 }
