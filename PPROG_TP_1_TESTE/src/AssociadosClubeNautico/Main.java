@@ -16,10 +16,10 @@ public class Main {
     public static void main(String[] args) {
         SocioAdulto SA1 =new SocioAdulto("Marco Silva", 236354490, 1986, 5, false);
         SocioMenor SM1 =new SocioMenor("Micaela Dias", 311346797, 1999, "Miguel Dias", 2);
-        SocioSenior SS1 =new SocioSenior();
+        SocioSenior SS1 =new SocioSenior("dir",123456,1976,true);
         SocioAdulto SA2 =new SocioAdulto("Luís Ferreira", 112211512, 1970, 25, false);
         SocioMenor SM2 =new SocioMenor("André Almeida", 154545789, 2016, "Conceição Alemida", 10);
-        SocioSenior SS2 =new SocioSenior();
+        SocioSenior SS2 =new SocioSenior("naodirg",123456,1946,false);
         SocioAdulto SA3 =new SocioAdulto("Francisco Moreira", 121518194, 1965, 50, true);
         SocioMenor SM3 =new SocioMenor("Nelson Semedo", 154546458, 2005, "José Semedo", 1);
         SocioSenior SS3 =new SocioSenior();
@@ -27,6 +27,12 @@ public class Main {
         SocioMenor SM4 =new SocioMenor("Mauro Dias", 121216145, 2000, "Miguel Dias", 50);
         SocioSenior SS4 =new SocioSenior();
         
+        //para apagar
+        System.out.println(SS2.getAnoNascimento());
+        System.out.println(SS2.calcularDesconto());
+        System.out.print("ola %.d2"+SS2.calcularMensalidade());
+        
+            
         Associados[] listaSocios = new Associados[12];
         listaSocios[0]=SA1;
         listaSocios[1]=SM1;

@@ -8,12 +8,18 @@ import java.util.Calendar;
  */
 public class SocioSenior extends Associados {
 
-    private int valorBase = 150;
-    private float descontobase = (float) 0.10;
-    private boolean dirigente = false;
+    private int valorBase;
+    private float descontobase;
+    private boolean dirigente;
     
+    private final String tagAdulto = "SAdulto-";
+    private static final int VALORBASE_POR_DEFEITO = 150;
+    private static final float DESCONTOBASE_POR_DEFEITO = (float) 0.10;
+    private static final boolean DIRIGENTE_POR_DEFEITO = false;
     private static final int yeartoday = Calendar.getInstance().get(Calendar.YEAR);
     private static int numeroSociosAdultos = 0;
+    
+    
     
     /**
      * Get the value of dirigente
@@ -70,18 +76,28 @@ public class SocioSenior extends Associados {
     }
 
     
-    public float getDesconto(int idade){
-        return ((int)idade/10)/10;
+    public SocioSenior(String nome, int nContribuinte, int anoNascimento,boolean dirigente) {
+        super(nome, nContribuinte, anoNascimento);
+        this.dirigente = dirigente;
+        
     }
 
+    public SocioSenior() {
+    }
+
+   
+    @Override
+    double calcularDesconto(){
+        if (this.dirigente){
+            return 1;
+        }else{
+            int decada=(int)((yeartoday-this.getAnoNascimento())/10);
+        return (double) (decada*0.1);
+        }
+    }
     @Override
     double calcularValorIntegral() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    double calcularDesconto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 150;
     }
     
 }
