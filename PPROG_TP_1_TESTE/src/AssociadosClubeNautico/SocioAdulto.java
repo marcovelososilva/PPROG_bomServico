@@ -55,7 +55,7 @@ public class SocioAdulto extends SocioJovem {
 
     @Override
     public String toString() {
-        return "SocioAdulto{" + "IDAdulto=" + IDAdulto + ", dirigente=" + dirigente + ", tagAdulto=" + tagAdulto + '}';
+        return "Socio Adulto: ID=" + IDAdulto + super.toString() + ", é Dirigente=" + dirigente + ".";
     }
    
     

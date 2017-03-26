@@ -7,7 +7,7 @@ package AssociadosClubeNautico;
 public abstract class SocioJovem extends Associados{
     private int numAulasSemanais;
     
-    private final int NUM_AULAS_SEMANAIS_POR_DEFEITO = 1;
+    private final int NUM_AULAS_SEMANAIS_POR_DEFEITO = 0;
     private static double valorPorAula = 25.0;
     private static double mensalidadeMaxima = 100.0;
 
@@ -80,7 +80,7 @@ public abstract class SocioJovem extends Associados{
 
     @Override
     public String toString() {
-        return "SocioJovem{" + "numAulasSemanais=" + numAulasSemanais + '}';
+        return super.toString() +  " Número de Aulas Semanais= " + numAulasSemanais;
     }
     
     

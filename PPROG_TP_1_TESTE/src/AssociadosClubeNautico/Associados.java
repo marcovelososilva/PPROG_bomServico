@@ -105,7 +105,7 @@ public abstract class Associados {
 
     @Override
     public String toString() {
-        return "Associados{" + "nome=" + nome + ", nContribuinte=" + nContribuinte + ", anoNascimento=" + anoNascimento + '}';
+        return " Nome= " + nome + ", Número de Contribuinte= " + nContribuinte + ", Ano de Nascimento= " + anoNascimento;
     }
      
     public double calcularMensalidade(){

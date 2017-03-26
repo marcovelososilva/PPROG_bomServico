@@ -58,7 +58,7 @@ public class SocioMenor extends SocioJovem {
 
     @Override
     public String toString() {
-        return "SocioMenor{" + "encarregadoEducacao=" + encarregadoEducacao + ", IDMenor=" + IDMenor + '}';
+        return "Socio Menor: ID=" + IDMenor + super.toString() + " e o seu Encarregado de Educação= " + encarregadoEducacao +".";
     }
     
     
