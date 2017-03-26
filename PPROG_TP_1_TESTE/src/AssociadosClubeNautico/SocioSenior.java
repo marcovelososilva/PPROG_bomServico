@@ -7,24 +7,20 @@ import java.util.Calendar;
  * @author Marco-115883 | Joao-1161313 (1NB)
  */
 public class SocioSenior extends Associados {
-
-    private int valorBase;
-    private float descontobase;
+    private String IDSenior;
     private boolean dirigente;
-    
-    private final String tagAdulto = "SAdulto-";
-    private static final int VALORBASE_POR_DEFEITO = 150;
-    private static final float DESCONTOBASE_POR_DEFEITO = (float) 0.10;
     private static final boolean DIRIGENTE_POR_DEFEITO = false;
+    
+    private final String tagSSenior = "SSenior-";
     private static final int yeartoday = Calendar.getInstance().get(Calendar.YEAR);
-    private static int numeroSociosAdultos = 0;
-    
-    
-    
+    private static int valorBase = 150;
+    private static float descontoBase= (float) 0.10;
+    private static int SSContador = 1;
+
     /**
-     * Get the value of dirigente
+     * Get the value of É DIRIGENTE?
      *
-     * @return the value of dirigente
+     * @return the value TRUE/FALSE of Dirigente
      */
     public boolean isDirigente() {
         return dirigente;
@@ -33,10 +29,10 @@ public class SocioSenior extends Associados {
     /**
      * Get the value of desconto
      *
-     * @return the value of desconto
+     * @return o valor
      */
     public float getDescontoBase() {
-        return descontobase;
+        return descontoBase;
     }
 
     /**
@@ -49,12 +45,21 @@ public class SocioSenior extends Associados {
     }
 
     /**
+     * Get the value of ID DO Senior
+     *
+     * @return the value of getIDSENIOR
+     */
+    public String getIDSenior() {
+        return IDSenior;
+    }
+
+    /**
      * Set the value of desconto
      *
      * @param desconto new value of desconto
      */
-    public void setDescontoBase(float desconto) {
-        this.descontobase = desconto;
+    public void setDescontoBase(float descontoBase) {
+        this.descontoBase = descontoBase;
     }
     
     /**
@@ -66,23 +71,33 @@ public class SocioSenior extends Associados {
         this.valorBase = valorBase;
     }
 
-        /**
-     * Set the value of dirigente
+    /**
+     * Set the value of DIRIGENTE
      *
-     * @param dirigente new value of dirigente
+     * @param Dirigente  String to change the old Dirigente
+     * @return void 
      */
     public void setDirigente(boolean dirigente) {
         this.dirigente = dirigente;
     }
-
+    
+    @Override
+    public String toString() {
+        return "Socio Senior: ID=" + IDSenior + super.toString() + ", é Dirigente=" + dirigente + ".";
+    }
     
     public SocioSenior(String nome, int nContribuinte, int anoNascimento,boolean dirigente) {
         super(nome, nContribuinte, anoNascimento);
         this.dirigente = dirigente;
-        
+        this.IDSenior= tagSSenior+ SSContador;
+        SSContador++;
     }
 
     public SocioSenior() {
+        super();
+        this.dirigente = DIRIGENTE_POR_DEFEITO;
+        this.IDSenior= tagSSenior+ SSContador;
+        SSContador++;
     }
 
    
@@ -91,13 +106,18 @@ public class SocioSenior extends Associados {
         if (this.dirigente){
             return 1;
         }else{
+            if ((int)(yeartoday-this.getAnoNascimento())>99){
+                return 1;
+        }else{
             int decada=(int)((yeartoday-this.getAnoNascimento())/10);
-        return (double) (decada*0.1);
-        }
+        return (double) (decada*descontoBase);
+        }}
     }
     @Override
     double calcularValorIntegral() {
-        return 150;
+        return valorBase;
     }
+    
+    
     
 }

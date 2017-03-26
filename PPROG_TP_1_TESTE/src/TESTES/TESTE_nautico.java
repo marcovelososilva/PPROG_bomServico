@@ -27,7 +27,7 @@ public class TESTE_nautico {
         SocioAdulto SA1 = new SocioAdulto("DDD", 444444444, 1986, 1, false);
         SocioAdulto SA2 = new SocioAdulto("EEE", 555555555, 1986, 50, true);
         SocioAdulto SA3 = new SocioAdulto("FFF", 666666666, 1986, 50, false);
-        SocioAdulto SA4 = new SocioAdulto("FFF", 666666666, 1986, 0, false);
+        SocioAdulto SA4 = new SocioAdulto("FFF", 777777777, 1986, 0, false);
         SocioAdulto SA5 = new SocioAdulto();
         System.out.println("\n\nSOCIOS ADULTOS:");
         boolean validarSA1 = SA1.calcularMensalidade() == 25.0;
@@ -41,7 +41,16 @@ public class TESTE_nautico {
         boolean validarSA5 = SA5.calcularMensalidade() == 0.0;
         System.out.println("    SociosAdulto5: " + validarSA5 + ".\ndados:" + SA5.toString());
  
-        
+        SocioSenior SS1 = new SocioSenior("GGG", 888888888, 1946, false);
+        SocioSenior SS2 = new SocioSenior("HHH", 999999999, 1937, true);
+        SocioSenior SS3 = new SocioSenior();
+        System.out.println("\n\nSOCIOS ADULTOS:");
+        boolean validarSS1 = SS1.calcularMensalidade() == 45.00000178813934;
+        System.out.println("    SociosAdulto1: " + validarSS1 + ".\ndados:" + SS1.toString());
+        boolean validarSS2 = SS2.calcularMensalidade() == 0.0;
+        System.out.println("    SociosAdulto2: " + validarSS2 + ".\ndados:" + SS2.toString());
+        boolean validarSS3 = SS3.calcularMensalidade() == 0.0;
+        System.out.println("    SociosAdulto5: " + validarSS3 + ".\ndados:" + SS3.toString());
     }
     
 }
