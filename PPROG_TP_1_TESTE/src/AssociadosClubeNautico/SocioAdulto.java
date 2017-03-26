@@ -62,7 +62,7 @@ public class SocioAdulto extends SocioJovem {
     
     @Override
     double calcularDesconto() {
-       return (dirigente) ? 100 : 0;
+       return (dirigente) ? 1 : 0;
     }
 
 

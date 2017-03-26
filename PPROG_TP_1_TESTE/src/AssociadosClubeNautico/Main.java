@@ -14,7 +14,6 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //METER DADOS
         SocioAdulto SA1 =new SocioAdulto("Marco Silva", 236354490, 1986, 5, false);
         SocioMenor SM1 =new SocioMenor("Micaela Dias", 311346797, 1999, "Miguel Dias", 2);
         SocioSenior SS1 =new SocioSenior();
@@ -53,7 +52,7 @@ public class Main {
         for (Associados e : listaSocios) {
             if (e !=null){
             double mensalidade = e.calcularMensalidade();
-            System.out.println("A mensalidade do sócio " +  e.getNome() + " é de : " + mensalidade + "€");
+            System.out.println("A mensalidade do sócio " +  e.getNome() + " é de : " + mensalidade + "€.");
             if (e instanceof SocioSenior) {
                 mensalidadeTotalSeniores =+ mensalidade;
             } 
@@ -63,9 +62,9 @@ public class Main {
             }
         }
         
-        System.out.printf("\nO total da mensalidade paga pelos Socios Jovens foi de: " + mensalidadeTotalJovens
-                      + ".\nO total da mensalidade paga pelos Socios Séniores foi de: " +  mensalidadeTotalSeniores
-                      + ".\nO peso da mensalidade dos socios Jovens foi %.f2" + (float) ( (mensalidadeTotalJovens) / (mensalidadeTotalJovens+mensalidadeTotalSeniores) * 100)
-                      + ".\nO peso da mensalidade dos socios Seniores foi %.f2" + (float) ( (mensalidadeTotalSeniores) / (mensalidadeTotalJovens+mensalidadeTotalSeniores) * 100) );        
+        System.out.println("\nO total da mensalidade paga pelos Socios Jovens foi de: " + mensalidadeTotalJovens + "€."
+                      + ".\nO total da mensalidade paga pelos Socios Séniores foi de: " +  mensalidadeTotalSeniores + "€."
+                      + ".\nO peso da mensalidade dos socios Jovens foi " + (float) ( (mensalidadeTotalJovens) / (mensalidadeTotalJovens+mensalidadeTotalSeniores) * 100) + "%."
+                      + ".\nO peso da mensalidade dos socios Seniores foi " + (float) ( (mensalidadeTotalSeniores) / (mensalidadeTotalJovens+mensalidadeTotalSeniores) * 100) + "%." );        
     }
 }
