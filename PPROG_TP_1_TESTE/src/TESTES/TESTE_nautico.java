@@ -51,6 +51,35 @@ public class TESTE_nautico {
         System.out.println("    SociosAdulto2: " + validarSS2 + ".\ndados:" + SS2.toString());
         boolean validarSS3 = SS3.calcularMensalidade() == 0.0;
         System.out.println("    SociosAdulto5: " + validarSS3 + ".\ndados:" + SS3.toString());
+        
+        
+        SocioMenor[] listaTesteSocioMenor = new SocioMenor[20];
+        listaTesteSocioMenor[0]= SM1;
+        listaTesteSocioMenor[1]= SM2;
+        listaTesteSocioMenor[2]= SM3;
+        listaTesteSocioMenor[3]= SM4;
+        listaTesteSocioMenor[4]= new SocioMenor("AAA", 120, 2000, "joana", 1);
+        listaTesteSocioMenor[5]= new SocioMenor("AAA", 120, 2000, "joana", 1);
+        listaTesteSocioMenor[6]= new SocioMenor("AAA", 120, 2000, "joana", 1);
+        listaTesteSocioMenor[7]= new SocioMenor("AAA", 120, 2000, "maria", 1);
+        listaTesteSocioMenor[8]= new SocioMenor("AAA", 120, 2000, "maria", 1);
+        listaTesteSocioMenor[9]= new SocioMenor("AAA", 120, 2000, "joana", 1);
+        listaTesteSocioMenor[10]= new SocioMenor("AAA", 120, 2000, "joana", 1);
+        listaTesteSocioMenor[11]= new SocioMenor("AAA", 120, 2000, "joana", 1);
+        listaTesteSocioMenor[12]= new SocioMenor("AAA", 120, 2000, "maria", 1);
+        listaTesteSocioMenor[13]= new SocioMenor("AAA", 120, 2000, "joana", 1);
+        listaTesteSocioMenor[14]= new SocioMenor("AAA", 120, 2000, "joana", 1);
+        listaTesteSocioMenor[15]= new SocioMenor("AAA", 120, 2000, "maria", 1);
+        listaTesteSocioMenor[16]= new SocioMenor("AAA", 120, 2000, "joana", 1);
+        listaTesteSocioMenor[17]= new SocioMenor("AAA", 120, 2000, "joana", 1);
+        listaTesteSocioMenor[18]= new SocioMenor("AAA", 120, 2000, "kika", 1);
+        listaTesteSocioMenor[19]= new SocioMenor("AAA", 120, 2000, "maria", 1);
+        
+        System.out.println("\n\nENCARREGADOS DE EDUCAÇÃO:");
+        System.out.println("RESULTADO ESPERADO: \n joana = 10 || maria = 5 ||encarEdu = 3 ||  kika=1");
+        Main.listaEncEducacao(listaTesteSocioMenor);
+        
+    
     }
     
 }
