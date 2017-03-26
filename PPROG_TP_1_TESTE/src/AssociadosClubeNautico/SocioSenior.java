@@ -18,6 +18,35 @@ public class SocioSenior extends Associados {
     private static int SSContador = 1;
 
     /**
+    * Construtor - Socio Senior com Parametros
+    * 
+    * @param numAulasSemanais  int numAulasSemanais
+    * @param nome  int nome
+    * @param nContribuinte  int Contribuinte
+    * @param anoNascimento  int anoNascimento
+    * @param encEducacao  String encEducacao
+    * @param dirigente boolean dirigente
+    *  
+    */
+    public SocioSenior(String nome, int nContribuinte, int anoNascimento,boolean dirigente) {
+        super(nome, nContribuinte, anoNascimento);
+        this.dirigente = dirigente;
+        this.IDSenior= tagSSenior+ SSContador;
+        SSContador++;
+    }
+
+    /**
+    * Construtor - Socio Senior sem Parametros
+    * 
+    */
+    public SocioSenior() {
+        super();
+        this.dirigente = DIRIGENTE_POR_DEFEITO;
+        this.IDSenior= tagSSenior+ SSContador;
+        SSContador++;
+    }
+
+    /**
      * Get the value of É DIRIGENTE?
      *
      * @return the value TRUE/FALSE of Dirigente
@@ -85,21 +114,6 @@ public class SocioSenior extends Associados {
     public String toString() {
         return "Socio Senior: ID=" + IDSenior + super.toString() + ", é Dirigente=" + dirigente + ".";
     }
-    
-    public SocioSenior(String nome, int nContribuinte, int anoNascimento,boolean dirigente) {
-        super(nome, nContribuinte, anoNascimento);
-        this.dirigente = dirigente;
-        this.IDSenior= tagSSenior+ SSContador;
-        SSContador++;
-    }
-
-    public SocioSenior() {
-        super();
-        this.dirigente = DIRIGENTE_POR_DEFEITO;
-        this.IDSenior= tagSSenior+ SSContador;
-        SSContador++;
-    }
-
    
     @Override
     double calcularDesconto(){
