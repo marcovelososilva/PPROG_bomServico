@@ -48,7 +48,7 @@ public class Main {
         listaSocios[11]=SS4;
         
         calcularMensalidade(listaSocios);
-        //LISTA ENCARREGADOS EDUCAÇÃO
+        listaEncEducacao(listaSocios);
     }
     
     public static void calcularMensalidade(Associados[] listaSocios){
@@ -60,10 +60,10 @@ public class Main {
             double mensalidade = e.calcularMensalidade();
             System.out.println("A mensalidade do sócio " +  e.getNome() + " é de : " + mensalidade + "€.");
             if (e instanceof SocioSenior) {
-                mensalidadeTotalSeniores =+ mensalidade;
+                mensalidadeTotalSeniores = mensalidadeTotalSeniores+ mensalidade;
             } 
             else{
-                mensalidadeTotalJovens =+ mensalidade;
+                mensalidadeTotalJovens = mensalidadeTotalJovens +  mensalidade;
             }
             }
         }
@@ -74,18 +74,36 @@ public class Main {
                       + ".\nO peso da mensalidade dos socios Seniores foi " + (float) ( (mensalidadeTotalSeniores) / (mensalidadeTotalJovens+mensalidadeTotalSeniores) * 100) + "%." );        
     }
     
-    public static void listaEncEducacao (Associados[] listaSocios){
-        System.out.println("==LISTA ENCARREGADOS DE EDUCAÇÃO E Nº DE EDUCANDOS==");
-        String[][] listaEncarregados = new String [listaSocios.length][2];
+    public static void listaEncEducacao(Associados[] listaSocios) {
+        System.out.println("\n\n==LISTA ENCARREGADOS DE EDUCAÇÃO E Nº DE EDUCANDOS==");
+        String[] listaEncarregados = new String[listaSocios.length];
+        int[] numEducandos = new int[listaSocios.length];
+        listaEncarregados[0]="nada;";
+        numEducandos[0]=0;
         int contEncarregados = 0;
+        
         for (Associados e : listaSocios) {
-            if (e !=null && e instanceof SocioMenor){
-                //if (listaSocios.encarregadoEducacao){
-                    
+            if (e != null && e instanceof SocioMenor) {
+                String nowEncarregado = ((SocioMenor) e).getEncarregadoEducacao();
+//                if (nowEncarregado.equalsIgnoreCase("default Encarregados Educação")) {
+//                    nowEncarregado = "SOCIO(S) CRIADO(S) SEM CAMPO DE ENCARREGADO DE EDUCAÇÃO";
+//                }
+                for (int i = 0; i <contEncarregados; i++) {
+                    if (nowEncarregado.equalsIgnoreCase(listaEncarregados[i])) {
+                        numEducandos[i]++;
+                    } else {
+                        listaEncarregados[i] = nowEncarregado;
+                        numEducandos[i] = 1;
+                        contEncarregados++;
+                    }
                 }
-            //} else {
-            
             }
         }
-
+        for (int i = 0; i < listaEncarregados.length; i++) {
+            if (listaEncarregados[i] != null){
+            System.out.println("O encarregado de Educação: " + listaEncarregados[i] + " tem " + numEducandos[i] + " educandos." );
+            }
+        }
     }
+
+}
