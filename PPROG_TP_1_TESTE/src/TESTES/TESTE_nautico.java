@@ -45,7 +45,7 @@ public class TESTE_nautico {
         SocioSenior SS2 = new SocioSenior("HHH", 999999999, 1937, true);
         SocioSenior SS3 = new SocioSenior();
         System.out.println("\n\nSOCIOS ADULTOS:");
-        boolean validarSS1 = SS1.calcularMensalidade() == 45.00000178813934;
+        boolean validarSS1 = SS1.calcularMensalidade() == 44.999998435378075;
         System.out.println("    SociosAdulto1: " + validarSS1 + ".\ndados:" + SS1.toString());
         boolean validarSS2 = SS2.calcularMensalidade() == 0.0;
         System.out.println("    SociosAdulto2: " + validarSS2 + ".\ndados:" + SS2.toString());
@@ -76,7 +76,7 @@ public class TESTE_nautico {
         listaTesteSocioMenor[19]= new SocioMenor("AAA", 120, 2000, "maria", 1);
         
         System.out.println("\n\nENCARREGADOS DE EDUCAÇÃO:");
-        System.out.println("RESULTADO ESPERADO: \n joana = 10 || maria = 5 ||encarEdu = 3 ||  kika=1");
+        System.out.println("RESULTADO ESPERADO: \n joana = 10 || maria = 5 ||encarEdu = 3 ||  kika=1 || semConstrutor = 1");
         Main.listaEncEducacao(listaTesteSocioMenor);
         
     
