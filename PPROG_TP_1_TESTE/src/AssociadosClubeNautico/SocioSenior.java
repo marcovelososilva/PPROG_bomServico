@@ -109,8 +109,8 @@ public class SocioSenior extends Associados {
             if ((int)(yeartoday-this.getAnoNascimento())>99){
                 return 1;
         }else{
-            int decada=(int)((yeartoday-this.getAnoNascimento())/10);
-        return (double) (decada*descontoBase);
+            int decada=(int)(yeartoday-this.getAnoNascimento())/10;
+        return (double) decada*descontoBase;
         }}
     }
     @Override
