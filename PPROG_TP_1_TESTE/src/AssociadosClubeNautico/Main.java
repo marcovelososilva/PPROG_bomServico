@@ -13,26 +13,20 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) {     
         SocioAdulto SA1 =new SocioAdulto("Marco Silva", 236354490, 1986, 5, false);
         SocioMenor SM1 =new SocioMenor("Micaela Dias", 311346797, 1999, "Miguel Dias", 2);
         SocioSenior SS1 =new SocioSenior("dir",123456,1976,true);
         SocioAdulto SA2 =new SocioAdulto("Luís Ferreira", 112211512, 1970, 25, false);
         SocioMenor SM2 =new SocioMenor("André Almeida", 154545789, 2016, "Conceição Alemida", 10);
-        SocioSenior SS2 =new SocioSenior("naodirg",123456,1946,false);
+        SocioSenior SS2 =new SocioSenior("Joao Luis",123456887,1946,false);
         SocioAdulto SA3 =new SocioAdulto("Francisco Moreira", 121518194, 1965, 50, true);
         SocioMenor SM3 =new SocioMenor("Nelson Semedo", 154546458, 2005, "José Semedo", 1);
-        SocioSenior SS3 =new SocioSenior();
+        SocioSenior SS3 =new SocioSenior("Joao Francisco",123456887,1933,false);
         SocioAdulto SA4 =new SocioAdulto("Gabriel Castanheira", 151616184, 1990, 5, true);
         SocioMenor SM4 =new SocioMenor("Mauro Dias", 121216145, 2000, "Miguel Dias", 50);
-        SocioSenior SS4 =new SocioSenior();
+        SocioSenior SS4 =new SocioSenior("Bruna Salvada",189223009,1900,false);
         
-        //para apagar
-        System.out.println(SS2.getAnoNascimento());
-        System.out.println(SS2.calcularDesconto());
-        System.out.print("ola %.d2"+SS2.calcularMensalidade());
-        //fim apagar
-            
         Associados[] listaSocios = new Associados[12];
         listaSocios[0]=SA1;
         listaSocios[1]=SM1;
@@ -78,29 +72,32 @@ public class Main {
         System.out.println("\n\n==LISTA ENCARREGADOS DE EDUCAÇÃO E Nº DE EDUCANDOS==");
         String[] listaEncarregados = new String[listaSocios.length];
         int[] numEducandos = new int[listaSocios.length];
-        listaEncarregados[0]="nada;";
-        numEducandos[0]=0;
         int contEncarregados = 0;
         
-        for (Associados e : listaSocios) {
-            if (e != null && e instanceof SocioMenor) {
-                String nowEncarregado = ((SocioMenor) e).getEncarregadoEducacao();
-//                if (nowEncarregado.equalsIgnoreCase("default Encarregados Educação")) {
-//                    nowEncarregado = "SOCIO(S) CRIADO(S) SEM CAMPO DE ENCARREGADO DE EDUCAÇÃO";
-//                }
-                for (int i = 0; i <contEncarregados; i++) {
-                    if (nowEncarregado.equalsIgnoreCase(listaEncarregados[i])) {
-                        numEducandos[i]++;
-                    } else {
-                        listaEncarregados[i] = nowEncarregado;
-                        numEducandos[i] = 1;
-                        contEncarregados++;
-                    }
+        for (int j = 0; j < listaSocios.length; j++ ) {
+
+            if (listaSocios[j] != null && listaSocios[j] instanceof SocioMenor) {
+                String nowEncarregado = ((SocioMenor) listaSocios[j]).getEncarregadoEducacao();
+                if (nowEncarregado.equalsIgnoreCase("default Encarregados Educação")) {
+                    nowEncarregado = "SOCIO(S) CRIADO(S) SEM CAMPO DE ENCARREGADO DE EDUCAÇÃO";
                 }
+                int tempcontEncarregados = (contEncarregados== 0) ? (contEncarregados+1) : contEncarregados;                
+                for (int i = 0; i < tempcontEncarregados; i++) {
+                    if (nowEncarregado.equalsIgnoreCase(listaEncarregados[i]) && listaEncarregados[i]!=null) {
+                        numEducandos[i]++;
+                        break;
+                    } else {
+                        listaEncarregados[contEncarregados] = nowEncarregado;
+                        numEducandos[contEncarregados] = 1;
+                        contEncarregados++;
+                        break;
+                    }
+                }            
             }
+            
         }
         for (int i = 0; i < listaEncarregados.length; i++) {
-            if (listaEncarregados[i] != null){
+           if (listaEncarregados[i] != null){
             System.out.println("O encarregado de Educação: " + listaEncarregados[i] + " tem " + numEducandos[i] + " educandos." );
             }
         }
