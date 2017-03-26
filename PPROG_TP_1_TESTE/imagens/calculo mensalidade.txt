@@ -1,0 +1,13 @@
+MESALIDADE = socio.calcularValorIntegral() * (1-calcularDesconto())
+
+
+
+		MENSALIDADE SEM DESCONTO		VALOR MÁXIMO		VALOR INTEGRAL			DESCONTO
+SOCIO ADULTO	numAulasSemanais * valorPorAula	valorMaximo		se MSD > VMaximo = 100		se Dirigente = 1
+										senão	MSDesconto 		senão	0
+
+SOCIO MENOR	numAulasSemanais * valorPorAula	valorMaximo		se MSD > VMaximo = 100		0,20
+											senão	MSDesconto 				
+
+SOCIO SENIOR									150				decadas*0,10
+														decada = (int) (AnoCorrente - AnoNascimento)/10

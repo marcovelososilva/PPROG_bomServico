@@ -102,6 +102,13 @@ public abstract class Associados {
     public void setAnoNascimento(int anoNascimento) {
         this.anoNascimento = anoNascimento;
     }
+
+    @Override
+    public String toString() {
+        return "Associados{" + "nome=" + nome + ", nContribuinte=" + nContribuinte + ", anoNascimento=" + anoNascimento + '}';
+    }
+    
+    
     
     abstract String calcularMensalidade();
 
